@@ -14,10 +14,12 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <style>
         /* either */
-        /* body,
+        /*
+        body,
         html {
             height: 100%;
-        } */
+        } 
+        */
 
         body {
             overflow: hidden;
@@ -45,21 +47,23 @@
     <div class="container">
         <form class="col-md-6 m-auto py-5 mt-5">
             <div class="input-group mb-3">
-                <input type="text" class="input-style form-control" placeholder="Enter a location for weather..."
-                    aria-label="Enter a location for weather" aria-describedby="button-addon2">
-                <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
+                <input id="city-name" type="text" class="input-style form-control"
+                    placeholder="Enter a location for weather..." aria-label="Enter a location for weather"
+                    aria-describedby="button-addon2">
+                <button onclick="searchCity()" class="btn btn-danger" type="button">Search</button>
             </div>
         </form>
         <div class=" text-center">
             <div class="card-style card bg-dark text-white w-25 m-auto py-4">
                 <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="" class="w-50 m-auto">
-                <h1>Dhaka</h1>
-                <h3><span>38.8</span>&deg;C</h3>
-                <h1>Clouds</h1>
+                <h1 id="city">Dhaka</h1>
+                <h3><span id="temperature">38.8</span>&deg;C</h3>
+                <h1 id="description">Clouds</h1>
             </div>
         </div>
     </div>
 
+    <script src="app.js"></script>
 </body>
 
 </html>
