@@ -5,7 +5,7 @@ const searchCity = () => {
     // ignoring white space faster 
     cityText = city.replace(/\s+/g, '');
     console.log(cityText)
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     console.log(url)
     fetch(url)
         .then(res => res.json())
@@ -20,5 +20,14 @@ const displayTemperature = data => {
     let temperature = document.getElementById('temperature')
     temperature.innerText = `${data.main.temp}`
     let description = document.getElementById('description')
-    description.innerText = `${data.weather[0].description}`
+    description.innerText = `${data.weather[0].main}`;
+    let icon = data.weather[0].icon;
+    // let image = document.getElementById('image');
+    // image.i = `http://openweathermap.org/img/wn/${icon}@2x.png`
+
+    // set weather icon
+    const url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    const img = document.getElementById('weather-icon')
+    img.setAttribute('src', url)
+
 }
